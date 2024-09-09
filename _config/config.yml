@@ -1,0 +1,39 @@
+app_everynumbering:
+    Menu:
+        Active: true
+        Title: 'Numbering'
+        PrimeryMenu: false
+        AdminMenu: true
+        UserMenu: false
+        Controller: 'EveryNumbering'
+        Icon: 'fas fa-list-ol'
+EveryNumbering\Model\EveryNumbering:
+    API_Filter_DataStoreID_Map: 'RecordSet.DataStoreID'
+    API_View_Fields:
+        - Slug
+        - Active
+        - FieldName
+        - StartsBy
+        - Prefix
+        - Suffix
+    API_Create_Fields:
+        - Slug
+        - Active
+        - FieldName
+        - StartsBy
+        - Prefix
+        - Suffix
+    API_Edit_Fields:
+        - Active
+        - FieldName
+        - StartsBy
+        - Prefix
+        - Suffix
+    API_Dataobject_Allowed_Realations:
+        - RecordSet
+        - FormField
+    API_Dataobject_Allowed_Form_Realations:
+        - FormField
+    API_View_All: true;     
+API_Namespace_Class_Map:
+    EveryNumbering: 'EveryNumbering\Model\EveryNumbering'

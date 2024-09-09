@@ -1,0 +1,9 @@
+---
+Name: EveryNumbering
+---
+EveryDataStore\Model\RecordSet\RecordSetItem:
+  extensions:
+    - EveryNumbering\Extension\EveryNumberingRecordSetItemExtension
+EveryDataStore\Model\RecordSet\RecordSet:
+  extensions:
+    - EveryNumbering\Extension\EveryNumberingRecordExtension

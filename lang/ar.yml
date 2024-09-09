@@ -1,0 +1,10 @@
+ar:
+   EveryNumbering\Model\EveryNumbering:
+        ACTIVE: 'فعال'
+        FIELDNAME: 'اسم الحقل'
+        STARTSBY: 'تبدأ ب '
+        PREFIX: 'سابقة'
+        SUFFIX: 'لاحقة'
+        COUNTER: 'عداد'
+        RECORDSET: 'قاعدة بيانات'
+        

@@ -1,0 +1,10 @@
+en:
+   EveryNumbering\Model\EveryNumbering:
+        ACTIVE: 'Active'
+        FIELDNAME: 'Field name'
+        STARTSBY: 'Starts by'
+        PREFIX: 'Prefix'
+        SUFFIX: 'Suffix'
+        COUNTER: 'Counter'
+        RECORDSET: 'Database'
+        
