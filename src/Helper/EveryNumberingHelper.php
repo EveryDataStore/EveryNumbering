@@ -4,6 +4,7 @@ namespace EveryNumbering\Helper;
 
 use EveryDataStore\Helper\EveryDataStoreHelper;
 use EveryDataStore\Model\RecordSet\Form\FormField;
+use EveryDataStore\Model\RecordSet\Form\FormFieldSetting;
 use EveryDataStore\Model\RecordSet\Form\FormFieldType;
 
 /** EveryDataStore/EveryNumbering v1.0
@@ -23,6 +24,10 @@ class EveryNumberingHelper extends EveryDataStoreHelper {
      * @return string
      */
     public static function setFormField($recordSet, $fieldName) {
+        $existsFormField = self::getFormFieldByNameAndRecordSetID($fieldName, $recordSet->ID);
+        if($existsFormField){
+            return $existsFormField->ID;
+        }
         $recordSetForm = $recordSet ? self::getFormFieldForm($recordSet) : null;
         $formFieldSection = $recordSetForm ? self::getFormFieldSection($recordSetForm) : null;
         $formFieldSectionColumn = $formFieldSection ? self::getFormFieldSectionColumn($formFieldSection) : null;
@@ -83,7 +88,23 @@ class EveryNumberingHelper extends EveryDataStoreHelper {
             }
         }
     }
-
+    
+    /**
+     * Checks if FormField is exiting
+     * 
+     * @param string $fieldName
+     * @param integer $recordSetID
+     * @return DataObject
+     */
+    private static function getFormFieldByNameAndRecordSetID($fieldName, $recordSetID){
+        $formFieldSetting = FormFieldSetting::get()->filter(['Title' => 'label', 'Value' => $fieldName, 'FormField.Column.Section.Form.RecordSet.ID' => $recordSetID])->first();
+        if($formFieldSetting && $formFieldSetting->FormFieldID){
+            $formField = FormField::get()->byID($formFieldSetting->FormFieldID);
+            return $formField ? $formField : null;
+        }
+        return null;
+    }
+    
     /**
      * This function returns Form of the $recordSet
      * 

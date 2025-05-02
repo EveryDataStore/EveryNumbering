@@ -1,5 +1,4 @@
 # EveryNumbering #
-
 This is a submodule of [EveryDataStore ECM](https://everydatastore.org) project which defines EveryNumbering app and its features.
 
 This app allows to define a unique automatically generated custom IDs for RecordSetItems.

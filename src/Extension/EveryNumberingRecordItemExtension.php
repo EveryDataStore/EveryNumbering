@@ -23,11 +23,8 @@ class EveryNumberingRecordSetItemExtension extends DataExtension {
     public function onAfterWrite() {
         parent::onAfterWrite(); 
         if($this->owner->RecordSet()->EveryNumbering()->Count() > 0 && $this->owner->ID && $this->owner->Version > 0){
-             LoggerHelper::info('EveryNumberRecordSetItemID ' . $this->owner->ID);
              EveryNumberingHelper::setRecordSetItemNumbering($this->owner->RecordSet()->EveryNumbering(), $this->owner->ID);
-         } else {
-             LoggerHelper::info('no EveryNumbering  ');
-         } 
+         }
     }
 
     public function onBeforeDelete() {
