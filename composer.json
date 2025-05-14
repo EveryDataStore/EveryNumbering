@@ -1,0 +1,23 @@
+{
+  "name": "everydatastore/everynumbering",
+  "description": "A submodule of EveryDataStore ECM that provides automatic generation of custom unique IDs for RecordSetItems.",
+  "type": "silverstripe-vendormodule",
+  "homepage": "https://everydatastore.org/en/apps/everynumbering",
+  "authors": [
+    {
+      "name": "EveryDataStore GmbH"
+    }
+  ],
+  "require": {
+    "php": "^8.1",
+    "everydatastore/everydatastorebackend": "^1.5.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "EveryNumbering\\": "src/"
+    }
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true
+}
+
